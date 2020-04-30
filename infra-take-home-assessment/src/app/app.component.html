@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div class="form-group">
+  <input class="form-control form-control-lg" type="text" [(ngModel)]="num" (keyup)=search()
+    placeholder="Search Phone number">
+</div>
+<h3>Total number of combinations</h3>{{size}}
+<ul>
+
+  <li *ngFor="let item of collection | paginate:{itemsPerPage: 10, currentPage:p}">{{item}}</li>
+</ul>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
